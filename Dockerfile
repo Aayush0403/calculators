@@ -1,10 +1,11 @@
 # Use nginx base image
 FROM nginx:alpine
 
-# Copy your HTML files to nginx html folder
+# Copy custom nginx config to override default
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy your HTML files into nginx html folder
 COPY . /usr/share/nginx/html
 
-# Expose default HTTP port
+# Expose port 8080
 EXPOSE 8080
-
-# Start nginx (already default CMD)
