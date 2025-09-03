@@ -5,6 +5,6 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html
 
 # Expose default HTTP port
-EXPOSE 80
+EXPOSE 8080
 
 # Start nginx (already default CMD)
